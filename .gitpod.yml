@@ -2,6 +2,8 @@
 tasks:
   - name: aws-cli
     before: |
+      sudo apt-get install tree
+      sudo apt-get install jq
       cd /workspace
       curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
       unzip awscliv2.zip

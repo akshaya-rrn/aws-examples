@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Usage: delete_vpc <VPC_ID> <IGW_ID> <SUBNET_ID> <RT_ID> <ASSOC_ID>"
+  exit 1
+fi
+
+VPC_ID=$1
+IGW_ID=$2
+SUBNET_ID=$3
+RT_ID=$4
+ASSOC_ID=$5
+
+aws ec2 describe-vpcs --vpc-ids $VPC_ID
+aws ec2 describe-subnets --subnet-ids $SUBNET_ID
+aws ec2 describe-route-tables --route-table-ids $RT_ID
+aws ec2 describe-internet-gateways --internet-gateway-ids $IGW_ID

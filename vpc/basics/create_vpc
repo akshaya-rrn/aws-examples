@@ -8,6 +8,7 @@ VPC_ID=$(aws ec2 create-vpc --cidr-block "172.2.3.0/16" --region ca-central-1 --
 echo $VPC_ID
 
 # create IGw
+aws ec2 attach-internet-gateway --internet-gateway-id igw-0c4c29bf45b528869 --vpc-id vpc-072816b558143e680
 
 # attach IGW to VPC
 

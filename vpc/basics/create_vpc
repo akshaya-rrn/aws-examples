@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# create VPC
+VPC_ID=$(aws ec2 create-vpc --cidr-block "172.2.3.0/16" --region ca-central-1 --tag-specifications='ResourceType=vpc, Tags=[{Key=Name,Value=my-vpc-console}]' \
+--query Vpc.VpcId \
+--output text)
+
+echo $VPC_ID
+
+# create IGw
+
+# attach IGW to VPC
+
+# crate anew subnet
+
+#associate the subnet
